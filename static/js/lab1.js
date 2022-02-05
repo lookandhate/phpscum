@@ -1,9 +1,11 @@
+// todo: add type annotations
+
 function merge_sets() {
     let first_set = new Set(document.getElementById("first_array").value.split(" "))
     let second_set = new Set(document.getElementById("second_array").value.split(" "))
 
     let merged = new Set([...first_set, ...second_set])
-    let output_field = document.getElementById("output")
+    let output_field: Element = document.getElementById("output")
     output_field.textContent = Array.from(merged).join(', ')
 
 }
