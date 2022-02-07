@@ -1,12 +1,20 @@
 // todo: add type annotations
 
+function is_alpha(character) {
+    return /^[A-Z]$/i.test(character)
+}
+
 function validate_word(word) {
     // cijb - с - цифра, b-буква, i -четная цифра.j-нечетная
-    return (word.length === 4) && !isNaN(Number(word[0])) && (Number(word[1]) % 2 === 0) && (Number(word[2]) % 2 === 1) && isNaN(Number(word[3]))
+    return (word.length === 4) && !isNaN(Number(word[0])) && (Number(word[1]) % 2 === 0) && (Number(word[2]) % 2 === 1) && is_alpha(word[3])
 }
 
 function validate_set(set_to_validate) {
     return Array.from(set_to_validate).every(validate_word)
+}
+
+function set_difference(first_set, second_set) {
+    return Array.from(first_set).filter(value => !second_set.has(value))
 }
 
 function merge_sets() {
@@ -66,7 +74,7 @@ function symmetric_difference() {
     output_field.textContent = Array.from(symmetric_difference_set).join(', ')
 }
 
-function difference() {
+function difference_a_on_b() {
     let first_set = new Set(document.getElementById("first_array").value.split(" "))
     let second_set = new Set(document.getElementById("second_array").value.split(" "))
 
@@ -75,7 +83,23 @@ function difference() {
         return
     }
 
-    let difference = Array.from(first_set).filter(value => !second_set.has(value))
+    let difference = set_difference(first_set, second_set)
+    let output_field = document.getElementById("output")
+
+
+    output_field.textContent = Array.from(difference).join(', ')
+
+}
+function difference_b_on_a() {
+    let first_set = new Set(document.getElementById("first_array").value.split(" "))
+    let second_set = new Set(document.getElementById("second_array").value.split(" "))
+
+    if (!validate_set(first_set) || !validate_set(second_set)) {
+        alert("Incorrect input")
+        return
+    }
+
+    let difference = set_difference(second_set, first_set)
     let output_field = document.getElementById("output")
 
 
