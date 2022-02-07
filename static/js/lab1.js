@@ -4,6 +4,12 @@ function is_alpha(character) {
     return /^[A-Z]$/i.test(character)
 }
 
+function output_array(array) {
+    const output_field = document.getElementById("output")
+    output_field.textContent = Array.from(array).join(', ')
+}
+
+
 function validate_word(word) {
     // cijb - с - цифра, b-буква, i -четная цифра.j-нечетная
     return (word.length === 4) && !isNaN(Number(word[0])) && (Number(word[1]) % 2 === 0) && (Number(word[2]) % 2 === 1) && is_alpha(word[3])
@@ -29,8 +35,7 @@ function merge_sets() {
 
 
     let merged = new Set([...first_set, ...second_set])
-    let output_field = document.getElementById("output")
-    output_field.textContent = Array.from(merged).join(', ')
+    output_array(merged)
 
 }
 
@@ -44,8 +49,7 @@ function intersect_sets() {
     }
 
     const intersection = Array.from(first_set).filter(value => Array.from(second_set).includes(value))
-    let output_field = document.getElementById("output")
-    output_field.textContent = intersection.join(', ')
+    output_array(intersection)
 }
 
 function symmetric_difference() {
@@ -70,8 +74,7 @@ function symmetric_difference() {
                 symmetric_difference_set.add(value)
         }
     )
-    let output_field = document.getElementById("output")
-    output_field.textContent = Array.from(symmetric_difference_set).join(', ')
+    output_array(symmetric_difference_set)
 }
 
 function difference_a_on_b() {
@@ -84,10 +87,7 @@ function difference_a_on_b() {
     }
 
     let difference = set_difference(first_set, second_set)
-    let output_field = document.getElementById("output")
-
-
-    output_field.textContent = Array.from(difference).join(', ')
+    output_array(difference)
 
 }
 function difference_b_on_a() {
@@ -100,9 +100,8 @@ function difference_b_on_a() {
     }
 
     let difference = set_difference(second_set, first_set)
-    let output_field = document.getElementById("output")
+    output_array(difference)
 
 
-    output_field.textContent = Array.from(difference).join(', ')
 
 }
