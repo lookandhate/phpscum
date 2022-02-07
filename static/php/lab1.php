@@ -21,9 +21,9 @@
         </tr>
         <tr><td colspan="2"> <input type="button" value = "Merge sets" onclick = "merge_sets();"> </td></tr>
         <tr><td colspan="2"> <input type="button" value = "Intersect sets" onclick = "intersect_sets();"> </td></tr>
-        <tr><td colspan="2"> <input type="button" value = "Symmetric differece of 2 sets" onclick = "symmetric_difference();"> </td></tr>
-        <tr><td colspan="2"> <input type="button" value = "Differece of A/B" onclick = "difference_a_on_b();"> </td></tr>
-        <tr><td colspan="2"> <input type="button" value = "Differece of B/A" onclick = "difference_b_on_a();"> </td></tr>
+        <tr><td colspan="2"> <input type="button" value = "Symmetric difference of 2 sets" onclick = "symmetric_difference();"> </td></tr>
+        <tr><td colspan="2"> <input type="button" value = "Difference of A/B" onclick = "difference_a_on_b();"> </td></tr>
+        <tr><td colspan="2"> <input type="button" value = "Difference of B/A" onclick = "difference_b_on_a();"> </td></tr>
         <tr>
             <td colspan="2"> <p id="output"></p> </td>
         </tr>
