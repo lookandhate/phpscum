@@ -1,1 +1,10 @@
-.form-control my
+.input-field {
+    width: 40%;
+}
+
+.button-group {
+}
+
+.button-style {
+    margin-bottom: 5px;
+}
