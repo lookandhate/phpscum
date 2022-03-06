@@ -1,9 +1,9 @@
 <html>
 <?php
-include "static/php/header.php"
+include "static/php/common/components/header.php"
 ?>
 <body>
-<br><a href="static/php/pages/lab1.php">Lab1</a> <br>
-<a href="static/php/pages/lab2.php">Lab2</a>
+<h1>THIS IS HOME PAGE WTF</h1>
+<a href="static/php/MLDM/pages/home_page.php"> MLDM Labs</a>
 </body>
 </html>
