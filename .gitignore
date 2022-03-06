@@ -1,2 +1,4 @@
 /.idea/
 /node_modules/
+/cpy_to_host.bat
+/test.html
