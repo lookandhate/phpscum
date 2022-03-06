@@ -1,32 +1,24 @@
 function check_matrix() {
     const matrix = document.getElementById('matrix');
-    console.log(matrix);
-    let arr2d = matrix.value.split('\n').map(value => value.trim());
-    console.log(arr2d);
-    const a = arr2d.map(value => value.split(" ").map(value1 => Number.parseInt(value1.split(' '))));
+    const a = matrix.value.split('\n').map(value => value.trim()).map(value => value.split(" ").map(value1 => Number.parseInt(value1.split(' '))));
 
     if (!validate_matrix(a)) {
         alert("incorrect input");
         return;
     }
     const textField = document.getElementById("result")
-    const output = `Рефлексивно?: ${reflection(a)}
+    textField.innerText = `Рефлексивно?: ${reflection(a)}
     Симметрично ?: ${symmetrical(a)}
-    Антисимметрично?: ${antisymmetrical(a)}
+    Антисимметрично?: ${antisymmetric(a)}
     Транзитивно?: ${transitivity(a)}`
-    textField.innerText = output
 }
 
-function validate_matrix(a) {
-    const size = a.length;
-    return a.every(value =>
-        value.length === size
-    );
+function validate_matrix(matrix_to_validate) {
+    return matrix_to_validate.every(value => value.length === matrix_to_validate.length);
 }
 
 
 function reflection(a) {
-
     const n = a.length;
     for (let i = 0; i < n; i++) {
         if (a[i][i] === 0) {
@@ -44,15 +36,13 @@ function symmetrical(a) {
             if (a[i][j] !== a[j][i]) {
                 return false;
             }
-
         }
-
     }
     return true;
 }
 
 
-function antisymmetrical(a) {
+function antisymmetric(a) {
     const n = a.length;
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
@@ -64,8 +54,6 @@ function antisymmetrical(a) {
         }
     }
     return true;
-
-
 }
 
 function transitivity(a) {
@@ -81,5 +69,4 @@ function transitivity(a) {
         }
     }
     return true;
-
 }
