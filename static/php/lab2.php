@@ -9,7 +9,10 @@
     <script type = "text/javascript" src = "../js/lab2.js"></script>
 </head>
 <body>
-<h1>Лабораторная работа №2</h1>
+<?php
+include "header.php"
+?>
+<h1>Л/р №2</h1>
 <form method = "" action="">
     <table>
         <tr>

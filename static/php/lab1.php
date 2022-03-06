@@ -10,6 +10,10 @@
 
 </head>
 <body>
+<?php
+include "header.php"
+?>
+
 <h1>Л/р №1</h1>
 
 
@@ -30,8 +34,10 @@
         <input type="button" class="btn btn-primary button-style" value="Intersect sets" onclick="intersect_sets();">
         <input type="button" class="btn btn-primary button-style" value="Symmetric difference of 2 sets"
                onclick="symmetric_difference();">
-        <input type="button" class="btn btn-primary button-style" value="Difference of A/B" onclick="difference_a_on_b();">
-        <input type="button" class="btn btn-primary button-style" value="Difference of B/A" onclick="difference_b_on_a();">
+        <input type="button" class="btn btn-primary button-style" value="Difference of A/B"
+               onclick="difference_a_on_b();">
+        <input type="button" class="btn btn-primary button-style" value="Difference of B/A"
+               onclick="difference_b_on_a();">
     </div>
 </form>
 </body>
