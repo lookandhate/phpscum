@@ -22,12 +22,12 @@ include "../../../common/components/header.php"
         <h2>Вам необходимо ввести матрицу ориентированного графа. Если между вершинами
             нет связи, то поставьте "p". Так же на главной диагонали матрицы
             должны быть проставлены нули.</h2>
-        <p><textarea cols="18" rows="6" name="matrica"></textarea></p><br>
+        <p><textarea cols="18" rows="6" class="form-control input-field" name="matrica"></textarea></p><br>
         <div>
             Начальная вершина: <input type="text" name="first"><br>
             Конечная вершина: <input type="text" name="second"><br>
         </div>
-        <input type="submit" value="Результат">
+        <input type="submit" class="btn btn-primary button-style" value="Результат">
     </form>
 </div>
 </body>

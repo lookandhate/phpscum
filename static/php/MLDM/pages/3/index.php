@@ -1,20 +1,17 @@
-<!DOCTYPE html>
 <html>
-<?php
-include "../../../common/components/header.php"
-?>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Лабораторная работа №3</title>
-    </head>
-    <body>
-        <form onsubmit="check(); return false;">
-            <h1> Функциональное отношение </h1>
-            <h2>Вам необходимо ввести бинарную матрицу</h2>
-            <p><textarea cols="18" rows="4" id="matrica"></textarea></p><br>
-            <input type = "submit" value = "Результат">
-        </form>
-        <br>Результат: <span id="Result"></span>
-        <script src="script.js"></script>
-    </body>
+<head>
+    <?php
+    include "../../../common/components/header.php"
+    ?>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Лабораторная работа 3</title>
+</head>
+<body>
+<h1>Лабораторная работа №3</h1><br>
+Первое множество: <label for="set1"></label><input class="form-control input-field" type="text" id="set1"<br><br>
+Второе множество: <label for="set2"></label><input class="form-control input-field" type="text" id="set2"><br><br>
+Отношение : <label for="relation"></label><input class="form-control input-field" type="text" id="relation"<br><br>
+<button type="button" class="btn btn-primary button-style" onclick="calculate()">Проверить</button>
+<p id="output"></p>
+</body>
 </html>
