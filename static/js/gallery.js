@@ -1,38 +1,38 @@
-const image = document.querySelectorAll('.slider .line img');
+const images = document.querySelectorAll('.slider .line img');
 const sliderLine = document.querySelector('.line');
-let count = 0;
+let selectedImage = 0;
 let width;
 
 function init(){
     console.log('resize');
    width = document.querySelector('.slider').offsetWidth;
-   sliderLine.style.width = `${width*image.length}px`;
-   image.forEach(item =>{
+   sliderLine.style.width = `${width*images.length}px`;
+   images.forEach(item =>{
        item.style.width = `${width}px`;
        item.style.height = 'auto';
    });
-   roll();
+   redraw();
 }
 
 window.addEventListener('resize', init);
 init();
 
 document.querySelector('.next').addEventListener('click',function(){
-    count++;
-    if (count >= image.length){
-        count = 0;
+    selectedImage++;
+    if (selectedImage >= images.length){
+        selectedImage = 0;
     }
-    roll()
+    redraw()
 });
 
 document.querySelector('.prev').addEventListener('click',function(){
-    count--;
-    if (count < 0){
-        count = image.length - 1;
+    selectedImage--;
+    if (selectedImage < 0){
+        selectedImage = images.length - 1;
     }
-    roll()
+    redraw()
 });
 
-function roll(){
-    sliderLine.style.transform = `translate(-${count * width}px`;
+function redraw(){
+    sliderLine.style.transform = `translate(-${selectedImage * width}px`;
 }

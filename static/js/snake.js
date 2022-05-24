@@ -12,28 +12,23 @@ let snake = [
 ]
 
 let score = 0;
-// True if changing direction
 let changing_direction = false;
-// Horizontal velocity
 let food_x;
 let food_y;
 let dx = 10;
-// Vertical velocity
 let dy = 0;
+const SCORE_DIFF = 15
 
 
-// Get the canvas element
+
 const snakeboard = document.getElementById("snakeboard");
-// Return a two dimensional drawing context
 const snakeboard_ctx = snakeboard.getContext("2d");
-// Start game
 main();
 
 gen_food();
 
 document.addEventListener("keydown", change_direction);
 
-// main function called repeatedly to keep the game running
 function main() {
 
     if (has_game_ended()) return;
@@ -49,7 +44,6 @@ function main() {
     }, 100)
 }
 
-// draw a border around the canvas
 function clear_board() {
     //  Select the colour to fill the drawing
     snakeboard_ctx.fillStyle = board_background;
@@ -156,7 +150,7 @@ function move_snake() {
     const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
     if (has_eaten_food) {
         // Increase score
-        score += 10;
+        score += SCORE_DIFF;
         // Display score on screen
         document.getElementById('score').innerHTML = score;
         // Generate new food location
@@ -166,10 +160,10 @@ function move_snake() {
         snake.pop();
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    pTag = document.querySelector("div");
-    newVal = document.createElement("p");
-    newVal.innerHTML = '';
-    pTag.appendChild(newVal);
-});
+//
+// document.addEventListener("DOMContentLoaded", function () {
+//     pTag = document.querySelector("div");
+//     newVal = document.createElement("p");
+//     newVal.innerHTML = '';
+//     pTag.appendChild(newVal);
+// });
