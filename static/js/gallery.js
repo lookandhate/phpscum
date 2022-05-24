@@ -34,6 +34,5 @@ document.querySelector('.prev').addEventListener('click',function(){
 });
 
 function roll(){
-    sliderLine.style.transform = 'translate(-' + count * width+'px';
     sliderLine.style.transform = `translate(-${count * width}px`;
 }
